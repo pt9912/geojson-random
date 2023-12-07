@@ -3,11 +3,12 @@
 var count = (process.argv[2] && parseInt(process.argv[2], 10)) || 100;
 var type = process.argv[3] || 'point';
 var bbox = (process.argv[4] && JSON.parse(process.argv[4]));
+var addProperties = (process.argv[5] && JSON.parse(process.argv[5]));
 var geojsonStream = require('geojson-stream');
 var geojsonRandom = require('./');
 
 if (type === 'point-stream') {
-  geojsonRandom.pointStream(count)
+  geojsonRandom.pointStream(count, bbox, addProperties)
     .pipe(geojsonStream.stringify())
     .pipe(process.stdout);
 } else {

@@ -19,10 +19,10 @@ module.exports.point = function(count, bbox) {
   return collection(features);
 };
 
-module.exports.pointStream = function(count, bbox) {
+module.exports.pointStream = function(count, bbox, addProperties) {
   return from.obj(function(size, next) {
-    if (--count) {
-      next(null, feature(bbox ? point(position(bbox)) : point()));
+    if (--count >= 0) {
+      next(null, feature(bbox ? point(position(bbox)) : point(), addProperties));
     } else {
       next(null, null);
     }
@@ -138,11 +138,15 @@ function polygon(coordinates) {
   };
 }
 
-function feature(geom) {
+var id = 1;
+
+function feature(geom, addProperties) {
+  id++;
   return {
     type: "Feature",
+    id: id,
     geometry: geom,
-    properties: {}
+    properties: {...addProperties}
   };
 }
 
