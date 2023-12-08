@@ -1,6 +1,14 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### 0.5.1 (2023-12-08)
+
+
+### Features
+
+* Added bbox as command line argument. ([#19](https://github.com/node-geojson/geojson-random/issues/19)) ([d65f6bc](https://github.com/node-geojson/geojson-random/commit/d65f6bcb311d1dfe617980121b3a7379e5e1f792))
+* lineString, generates linestrings ([cc7f1e7](https://github.com/node-geojson/geojson-random/commit/cc7f1e78d57f96c7e06bd4a14cf8be763726f997)), closes [#13](https://github.com/node-geojson/geojson-random/issues/13)
 
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/node-geojson/geojson-random/compare/v0.4.0...v0.5.0) (2019-01-29)

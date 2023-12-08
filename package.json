@@ -1,6 +1,6 @@
 {
   "name": "geojson-random",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "generate random geojson features",
   "main": "index.js",
   "bin": {
@@ -25,9 +25,11 @@
   },
   "homepage": "https://github.com/node-geojson/geojson-random",
   "devDependencies": {
-    "eslint": "^7.0.0",
+    "@babel/core": "^7.23.5",
+    "@babel/eslint-parser": "^7.23.3",
+    "eslint": "^7.32.0",
     "standard-version": "^9.0.0",
-    "tap": "^14.10.7"
+    "tap": "^18.6.1"
   },
   "dependencies": {
     "from2": "^2.1.0",
