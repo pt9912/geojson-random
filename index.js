@@ -4,6 +4,8 @@ module.exports = function() {
   throw new Error("call .point(), .lineString(), or .polygon() instead");
 };
 
+var id = 0;
+
 function position(bbox) {
   if (bbox) return coordInBBBOX(bbox);
   else return [lon(), lat()];
@@ -19,7 +21,8 @@ module.exports.point = function(count, bbox) {
   return collection(features);
 };
 
-module.exports.pointStream = function(count, bbox, addProperties) {
+module.exports.pointStream = function(count, bbox, addProperties, idOffset) {
+  id += idOffset || 0;
   return from.obj(function(size, next) {
     if (--count >= 0) {
       next(null, feature(bbox ? point(position(bbox)) : point(), addProperties));
@@ -138,7 +141,6 @@ function polygon(coordinates) {
   };
 }
 
-var id = 1;
 
 function feature(geom, addProperties) {
   id++;

@@ -1,2 +1,4 @@
 node_modules
 package-lock.json
+.tap/
+.nyc_output/
